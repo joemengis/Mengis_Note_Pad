@@ -9,14 +9,14 @@ const app = express();
 const PORT = process.env.PORT || 8081;
 
 // Body Parser Install
-app.use(bodyParser.urlencoded({ extended: false })) 
+app.use(express.urlencoded({ extended: true })) 
 
 // Parse application/json
-app.use(bodyParser.json()) 
+app.use(express.json()) 
 
 // Include api and html-routes and use express
-require('./Develop/routes/api-routes.js')(app);  
-require('./Develop/routes/html-routes.js')(app);  
+require('./Develop/routes/api-routes')(app);  
+require('./Develop/routes/html-routes')(app);  
  
 
 // App listener
