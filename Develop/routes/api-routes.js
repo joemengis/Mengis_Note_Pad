@@ -20,6 +20,13 @@ module.exports = function(app) {
         res.send(noteData);
         console.log("note date is:", noteData);
    });
+
+   app.delete('/api/notes/:id', (req, res) => {
+       const noteID = req.params.id;
+
+       noteData.splice(noteID-1, 1);
+       res.send(noteData);
+   })
 };
 
 
